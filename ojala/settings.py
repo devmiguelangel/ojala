@@ -22,7 +22,7 @@ SECRET_KEY = '*%p$jncqdsdlypeq@^$a@k(+7+jcl$78v!5dxbc_i$7$41^bq8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = []
 
@@ -58,15 +58,19 @@ WSGI_APPLICATION = 'ojala.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'ojala',
+        'USER': 'ojala',
+        'PASSWORD': 'Ojala123',
+        'HOST': 'localhost',
+        'PORT': '3306'
     }
 }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
